@@ -138,14 +138,15 @@
       div.className = "subject";
       div.dataset.index = index;
       div.innerHTML = `${nombre}<div class='info'>${periodo}</div>`;
-
+      
       div.onclick = () => {
         if (!div.classList.contains("locked")) {
           div.classList.remove("aprobada", "regularizada");
-          if (modo === "aprobada") div.classList.add("aprobada");
-          if (modo === "regularizada") div.classList.add("regularizada");
-        }
-      };
+            if (modo === "aprobada") div.classList.add("aprobada");
+            if (modo === "regularizada") div.classList.add("regularizada");
+      aplicarBloqueos();
+            }
+         };
 
       container.appendChild(div);
     });
